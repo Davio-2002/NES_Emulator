@@ -5,8 +5,8 @@ set(CMAKE_CXX_STANDARD 20)
 
 add_executable(NES_Emulator main.cpp
         Sources/Bus.cpp
-        Includes/Bus.h
         Sources/cpu6502.cpp
+        Includes/Bus.h
         Includes/cpu6502.h
         TypeAliases/types.h
         TypeAliases/pch.h

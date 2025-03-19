@@ -60,8 +60,9 @@ public:
     void NonMaskableInterruptRequest();
 
     u8 Fetch();
-    u8 fetched_ = 0x00;
 
+	// Current working input value represented to ALU
+    u8 fetched_ = 0x00;
     u16 addr_abs = 0x0000;
     u8 addr_rel = 0x00;
     u8 opcode = 0x00;
@@ -76,8 +77,6 @@ public:
 
 	std::vector<Instruction> lookup;
 
-public:
-
     void ConnectBus(const std::shared_ptr<Bus> &n );
 
 private:
@@ -86,4 +85,7 @@ private:
     u8 Read(u16 address) const;
 
     void Write(u16 address, u8 data) const;
+
+	u8 GetFlag(FLAG6502 f) const;
+	void SetFlag(FLAG6502 f, bool v);
 };
